@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block content%}
+<!--'-->
+<ul class='list-group'>
+    {%for item in items%}
+    <li class="list-group-item">{{item.items_added }}
+        <div class='float right'>
+            <form action="delete/{{item.id}}" method='post'>
+                {% csrf_token%}
+                <button type="submit" class="btn btn-danger" name='delete'>DELETE</button>
+        </div>
+        </form>
+    </li>
+
+    {%endfor%}
+
+
+</ul>
+
+{%endblock%}
